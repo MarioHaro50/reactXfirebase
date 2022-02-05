@@ -3,9 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { db } from '../firebase/firebaseConfig'
 import { doc, getDoc } from "firebase/firestore"; //! Importamos los modulos de firestore
 
-
 const LinkForm = props => {
-
   //* Creamos un objeto donde iran los valores de nuestros campos
   const initialStateValues = {
     url: "",
@@ -46,7 +44,7 @@ const LinkForm = props => {
 
   return (
     <form className='card card-body' onSubmit={handleSubmit}>
-      <div className="form-group input-group">
+      <div className="form-group input-group p-1">
         <div className="input-group-text bg-light">
           <i className="material-icons">insert_link</i>
         </div>
@@ -59,7 +57,7 @@ const LinkForm = props => {
           value={values.url}
         />
       </div>
-      <div className="form-group input-group">
+      <div className="form-group input-group p-1">
         <div className="input-group-text bg-light">
           <i className="material-icons">create</i>
         </div>
@@ -72,7 +70,7 @@ const LinkForm = props => {
             value={values.name}
           />
       </div>
-      <div className="form-group">
+      <div className="form-group p-1">
         <textarea
           onChange={handleInputChange}
           name="description" 
@@ -82,7 +80,7 @@ const LinkForm = props => {
           value={values.description}
         />
       </div>
-      <button className="btn btn-primary btn-block">
+      <button className="btn btn-primary btn-block p-1">
         {props.currentID === '' ? 'Guardar' : 'Actualizar'}
       </button>
     </form>

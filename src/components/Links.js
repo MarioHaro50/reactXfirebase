@@ -24,7 +24,15 @@ const Links = () => {
       } else {
         //* METODO PARA ACTUALIZAR UN DATO YA EXISTENTE.
         await updateDoc(doc(db, "links", currentID),linkObject);
-        toast.info('Link actualizado', {theme: "dark", autoClose: 2000});
+        toast.info('Link actualizado', {
+          theme: "dark", 
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
         setCurrentID('');
       }
     } catch (error) {
@@ -62,7 +70,15 @@ const Links = () => {
     try {
       if (window.confirm('¿Estás seguro de eliminar este link?')) {
         await deleteDoc(doc(db, "links", id));
-        toast.error('Link borrado', {theme: "dark", autoClose: 2000});
+        toast.error('Link borrado', {
+          theme: "dark", 
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
       }
     } catch (error) {
       console.log(error);
