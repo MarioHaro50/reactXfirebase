@@ -55,7 +55,14 @@ const LinkForm = props => {
           placeholder='https://linkQueQuieresGuardar.com'
           name="url"
           value={values.url}
+          required
         />
+        <div class="invalid-feedback">
+          Por favor llena el campo.
+        </div>
+        <div class="valid-feedback">
+          Mucho mejor!
+        </div>
       </div>
       <div className="form-group input-group p-1">
         <div className="input-group-text bg-light">
@@ -68,7 +75,14 @@ const LinkForm = props => {
             placeholder='Nombre'
             name="name"
             value={values.name}
+            required
           />
+          <div class="invalid-feedback">
+            Por favor llena el campo.
+          </div>
+          <div class="valid-feedback">
+            Mucho mejor!
+          </div>
       </div>
       <div className="form-group p-1">
         <textarea
@@ -78,7 +92,14 @@ const LinkForm = props => {
           className="form-control"
           placeholder="Escribe una descripción"
           value={values.description}
+          required
         />
+        <div class="invalid-feedback">
+          Por favor llena el campo.
+        </div>
+        <div class="valid-feedback">
+          Mucho mejor!
+        </div>
       </div>
       <button className="btn btn-primary btn-block p-1">
         {props.currentID === '' ? 'Guardar' : 'Actualizar'}
